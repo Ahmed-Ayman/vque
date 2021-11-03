@@ -1,0 +1,4 @@
+/vendor/*
+/.ddev/
+/web/core
+/web/modules/contrib
