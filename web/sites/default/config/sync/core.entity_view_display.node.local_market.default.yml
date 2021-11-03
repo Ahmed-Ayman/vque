@@ -1,0 +1,19 @@
+uuid: ddb244dd-91bf-4b84-a434-2fd51e2dedac
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.local_market
+  module:
+    - user
+id: node.local_market.default
+targetEntityType: node
+bundle: local_market
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

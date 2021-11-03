@@ -1,0 +1,20 @@
+uuid: e2d66f42-7253-45f9-a4cd-2f2dc2fef76d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_latitude
+field_name: field_latitude
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

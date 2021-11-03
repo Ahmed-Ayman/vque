@@ -1,0 +1,21 @@
+uuid: 0e0f2315-77a0-4289-88ea-dfdf399649fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_end_time
+    - node.type.store
+id: node.store.field_end_time
+field_name: field_end_time
+entity_type: node
+bundle: store
+label: 'end time'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1635950824
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

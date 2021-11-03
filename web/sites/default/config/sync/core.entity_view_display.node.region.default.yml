@@ -1,0 +1,28 @@
+uuid: 52e103bb-986c-4709-872f-e85748396d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.region.field_local_market
+    - node.type.region
+  module:
+    - user
+id: node.region.default
+targetEntityType: node
+bundle: region
+mode: default
+content:
+  field_local_market:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

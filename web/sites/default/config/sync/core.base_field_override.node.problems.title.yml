@@ -1,0 +1,18 @@
+uuid: c8469a10-0139-4ced-92b2-642ac13b545b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.problems
+id: node.problems.title
+field_name: title
+entity_type: node
+bundle: problems
+label: title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 27ff869b-a4d8-4a31-8bd9-a50f424b034e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_local_market
+field_name: field_local_market
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
