@@ -16,19 +16,28 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.0",
+        "drupal/coffee": "^1.2",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
-        "drupal/core-recommended": "^9.2"
+        "drupal/core-recommended": "^9.2",
+        "drupal/devel": "^4.1",
+        "drupal/geofield": "^1.34",
+        "drupal/gin": "^3.0@alpha",
+        "drupal/gin_toolbar": "^1.0@beta",
+        "drush/drush": "^10.6"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true
     },
     "extra": {
+
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
@@ -63,6 +72,7 @@
                 "type:drupal-custom-theme"
             ]
         },
+        "patches-file": "composer.patches.json",
         "drupal-core-project-message": {
             "include-keys": [
                 "homepage",
