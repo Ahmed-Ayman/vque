@@ -1,0 +1,22 @@
+uuid: 40e6a10b-bb71-40e5-ac58-a679e1d1f858
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vque
+_core:
+  default_config_hash: BL6Gcw5Us0zai1ADadlNYLxlEblMedc_3C3lF0PjtCE
+id: vque_content
+theme: vque
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

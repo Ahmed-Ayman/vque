@@ -1,0 +1,22 @@
+uuid: 96bf6cd0-b121-44a8-8f2b-63e5fafde3a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vque
+_core:
+  default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
+id: vque_breadcrumbs
+theme: vque
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

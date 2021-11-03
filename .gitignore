@@ -2,3 +2,5 @@
 /.ddev/
 /web/core
 /web/modules/contrib
+/web/sites/default/files/
+/.idea/*

@@ -1,0 +1,20 @@
+uuid: 9e87e431-ba58-4aa9-bdde-7b807d86ddb9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vque
+_core:
+  default_config_hash: sBMSSrWtP58IZaz1i3-MJ9yq_y32w1nc7N5DZJmt-4M
+id: vque_primary_admin_actions
+theme: vque
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

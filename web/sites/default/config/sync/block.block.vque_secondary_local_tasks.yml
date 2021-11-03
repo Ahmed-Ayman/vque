@@ -1,0 +1,22 @@
+uuid: ae2619fb-705b-42b3-9c99-025559973427
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vque
+_core:
+  default_config_hash: V7GM1m6Qh500cQE7LWZV8lRuwLqXdjR0S2kSk8pEv6g
+id: vque_secondary_local_tasks
+theme: vque
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

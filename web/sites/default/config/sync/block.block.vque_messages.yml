@@ -1,0 +1,22 @@
+uuid: 97a97546-1abc-4fe0-bdff-985fcac5aca9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vque
+_core:
+  default_config_hash: KfyaTPRJEcAyy2e5AxEfWQnuHcn4WrfvcWek7lSmHZQ
+id: vque_messages
+theme: vque
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

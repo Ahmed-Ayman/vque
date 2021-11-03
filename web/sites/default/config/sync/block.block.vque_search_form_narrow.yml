@@ -1,0 +1,23 @@
+uuid: e2f692b0-7f51-4438-bc21-c25f3476e890
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - vque
+_core:
+  default_config_hash: WcXqPc7NoExO03VwGjmiiEkqTr7N2YqKzsq9Bz9Orh8
+id: vque_search_form_narrow
+theme: vque
+region: primary_menu
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility: {  }

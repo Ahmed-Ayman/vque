@@ -1,0 +1,22 @@
+uuid: 97452f1f-6bd5-4f2a-9ef4-c3c95ec672ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - vque
+_core:
+  default_config_hash: VV9kqYMqLSoPSMw-XVpo0auKK0RfnbQTkqYPVQxqaV0
+id: vque_help
+theme: vque
+region: content_above
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
