@@ -1,0 +1,22 @@
+uuid: a7360264-2fc6-483d-b21f-f1bce877f3be
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.region.field_local_market
+    - node.type.region
+  module:
+    - user
+id: node.region.teaser
+targetEntityType: node
+bundle: region
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_local_market: true

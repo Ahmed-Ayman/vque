@@ -1,0 +1,36 @@
+uuid: e1c4a581-f370-467b-a9c6-386cc5adfd14
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.store.field_average_waiting_time
+    - field.field.node.store.field_end_time
+    - field.field.node.store.field_latitude
+    - field.field.node.store.field_local_market
+    - field.field.node.store.field_longitude
+    - field.field.node.store.field_region
+    - field.field.node.store.field_start_time
+    - field.field.node.store.field_store_image
+    - node.type.store
+  module:
+    - user
+id: node.store.teaser
+targetEntityType: node
+bundle: store
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_average_waiting_time: true
+  field_end_time: true
+  field_latitude: true
+  field_local_market: true
+  field_longitude: true
+  field_region: true
+  field_start_time: true
+  field_store_image: true

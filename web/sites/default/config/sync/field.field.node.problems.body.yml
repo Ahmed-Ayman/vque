@@ -1,0 +1,23 @@
+uuid: cac28318-edbb-4385-ab43-34cf2ffba4c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.problems
+  module:
+    - text
+id: node.problems.body
+field_name: body
+entity_type: node
+bundle: problems
+label: answer
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

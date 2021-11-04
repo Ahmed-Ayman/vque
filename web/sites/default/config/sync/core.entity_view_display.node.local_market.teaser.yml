@@ -1,0 +1,20 @@
+uuid: 1568fc72-a4e0-4728-b504-2ec877c68cad
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.local_market
+  module:
+    - user
+id: node.local_market.teaser
+targetEntityType: node
+bundle: local_market
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

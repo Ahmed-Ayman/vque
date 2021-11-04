@@ -1,0 +1,23 @@
+uuid: 65cc27d6-7570-495b-b5a7-5c9734c9344d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_average_waiting_time
+    - node.type.store
+id: node.store.field_average_waiting_time
+field_name: field_average_waiting_time
+entity_type: node
+bundle: store
+label: 'Average Waiting Time'
+description: 'Average Waiting Time per customer'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,37 @@
+uuid: 8f02d1ad-0cde-4dc3-9bf0-08c761b4cb82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.problems.body
+    - field.field.node.problems.field_category
+    - node.type.problems
+  module:
+    - text
+    - user
+id: node.problems.default
+targetEntityType: node
+bundle: problems
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_category:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

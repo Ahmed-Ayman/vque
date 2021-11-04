@@ -1,0 +1,32 @@
+uuid: 905079cf-245f-4dd7-a5a4-3022b56dd4b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.problems.body
+    - field.field.node.problems.field_category
+    - node.type.problems
+  module:
+    - text
+    - user
+id: node.problems.teaser
+targetEntityType: node
+bundle: problems
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_category: true

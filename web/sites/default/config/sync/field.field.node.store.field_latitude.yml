@@ -1,0 +1,21 @@
+uuid: f067c56c-be88-49c7-99de-3d1a5088e1b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latitude
+    - node.type.store
+  module:
+    - text
+id: node.store.field_latitude
+field_name: field_latitude
+entity_type: node
+bundle: store
+label: latitude
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
