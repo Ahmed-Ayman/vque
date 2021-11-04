@@ -1,0 +1,29 @@
+uuid: b9d92c5a-2a44-4d10-ad41-df16e73a27b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reservation_problem
+    - node.type.problems
+    - node.type.reservation
+id: node.reservation.field_reservation_problem
+field_name: field_reservation_problem
+entity_type: node
+bundle: reservation
+label: 'Reservation Problem'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      problems: problems
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

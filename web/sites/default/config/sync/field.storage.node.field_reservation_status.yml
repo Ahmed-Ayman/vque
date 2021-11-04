@@ -1,0 +1,36 @@
+uuid: 80cbb9b5-1220-417d-8643-533763cf9e42
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_reservation_status
+field_name: field_reservation_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'waiting in the queue'
+      label: 'waiting in the queue'
+    -
+      value: canceled
+      label: canceled
+    -
+      value: 'Declined by the store (passed by 10)'
+      label: 'Declined by the store (passed by 10)'
+    -
+      value: 'Problem resolved'
+      label: 'Problem resolved'
+    -
+      value: 'visit the store again'
+      label: 'visit the store again'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

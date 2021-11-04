@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.problems.body
     - field.field.node.problems.field_category
+    - field.field.node.problems.field_publish_for_end_users
     - node.type.problems
   module:
     - text
@@ -30,3 +31,4 @@ content:
     region: content
 hidden:
   field_category: true
+  field_publish_for_end_users: true

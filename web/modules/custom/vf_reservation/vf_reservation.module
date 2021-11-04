@@ -45,14 +45,81 @@ function vf_reservation_preprocess_views_view_field(&$vars)
 {
   if (isset($vars['view']) && ($vars['view']->id() == 'stores')) {
     if ($vars['field']->field == 'nothing') {
-      $number = \Drupal::request()->request->get('mobile');
-//      dump(\Drupal::request()->request);
-      $problem = \Drupal::request()->request->get('problem');
-      if ($number && $problem){
-        $out = $vars['output']->__toString();
-        $out = str_replace('/reserve', "/reserve?mn=" . $number . "&" . "prob=" . $problem, $out);
-        $vars['output'] = (new \Drupal\Core\Render\Markup())->create($out);
-      }
+      $number = \Drupal::request()->request->get('mobile') ?? '-';
+      $problem = \Drupal::request()->request->get('problem') ?? '-';
+      $store = $vars['row']->nid;
+      $out = $vars['output']->__toString();
+      $out = str_replace('/reserve', "/reserve?st=" . $store . "&mn=" . $number . "&" . "prob=" . $problem, $out);
+      $vars['output'] = (new \Drupal\Core\Render\Markup())->create($out);
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function vf_reservation_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id == 'node_reservation_form') {
+    $store = \Drupal::request()->get('st');
+    $storeNode = \Drupal\node\Entity\Node::load($store);
+    if ($storeNode) {
+      $mobile = \Drupal::request()->get('mn');
+      $problem = \Drupal::request()->get('prob');
+
+      $createdRevision = \Drupal::entityQuery('node')
+        ->condition('type', 'reservation')
+        ->condition('field_reservation_user', \Drupal::currentUser()->id())
+        ->condition('field_reservation_status', "waiting in the queue")
+        ->execute();
+      if (!empty($createdRevision)) {
+        \Drupal::messenger()->addWarning("you have a reservation already!");
+        $redirect = new \Symfony\Component\HttpFoundation\RedirectResponse("/reservations");
+        $redirect->send();
+        return;
+      }
+
+      // TODO add category
+      $problemNode = \Drupal\node\Entity\Node::create([
+        'type' => 'problems',
+        'title' => $problem
+      ]);
+      $problemNode->save();
+
+      $uid = \Drupal::currentUser()->id();
+      // title is the reservation id
+
+      $reservationID = "#" . str_replace(' ', '-', $storeNode->label()) . "-" . rand(1, 10000000000) * 1000;
+      $form['title']['widget'][0]['value']['#default_value'] = $reservationID;
+      $form['field_phone_number']['widget'][0]['value']['#default_value'] = $mobile;
+      $form['field_reservation_problem']['widget'][0]['target_id']['#default_value'] = $problemNode;
+      $form['field_reservation_store']['widget'][0]['target_id']['#default_value'] = $storeNode;
+      $form['field_reservation_problem']['#disabled'] = TRUE;
+      $form['field_reservation_store']['#disabled'] = TRUE;
+      $form['title']['#disabled'] = TRUE;
+      unset($form['actions']['preview']);
+      $form['actions']['submit']['#value'] = t("Reserve at the store");
+    } else {
+      \Drupal::messenger()->addError("something went wrong!");
+    }
+    $form_state->setRedirectUrl(new \Drupal\Core\Url('/reservations'));
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function vf_reservation_entity_presave(\Drupal\Core\Entity\EntityInterface $entity)
+{
+
+  if ($entity->bundle() == 'reservation') {
+    $entity->field_reservation_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $entity->field_reservation_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $entity->field_reservation_status = "waiting in the queue";
+
+    $store = \Drupal\node\Entity\Node::load($entity->field_reservation_store->getString());
+    $peopleInQueue = intval($store->get('field_number_of_people_in_queue')->getString());
+    $currentQueue = intval($store->get('field_currently_served_customer')->getString());
+    $entity->field_reservation_queue_number = $peopleInQueue + $currentQueue;
   }
 }

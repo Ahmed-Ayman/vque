@@ -1,0 +1,23 @@
+uuid: 47c8c4c6-b9a3-4968-b513-af26aebc214f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publish_for_end_users
+    - node.type.problems
+id: node.problems.field_publish_for_end_users
+field_name: field_publish_for_end_users
+entity_type: node
+bundle: problems
+label: 'Publish for end users'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

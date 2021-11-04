@@ -1,0 +1,14 @@
+uuid: 6093d9e4-c8f6-4a27-b1b4-7f6377c5970d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vodafone_user
+  module:
+    - user
+id: user_add_role_action.vodafone_user
+label: 'Add the Vodafone user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: vodafone_user

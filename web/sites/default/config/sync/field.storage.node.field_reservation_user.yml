@@ -1,17 +1,16 @@
-uuid: 893ff50b-3d4f-4a9d-8b43-49f309e351d5
+uuid: a9cdbe4c-531f-4898-bc4e-05ff15922077
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - user
-id: user.field_mobile
-field_name: field_mobile
-entity_type: user
-type: string
+id: node.field_reservation_user
+field_name: field_reservation_user
+entity_type: node
+type: entity_reference
 settings:
-  max_length: 100
-  is_ascii: false
-  case_sensitive: false
+  target_type: user
 module: core
 locked: false
 cardinality: 1

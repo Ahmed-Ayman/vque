@@ -1,0 +1,10 @@
+uuid: f17386c0-c4f7-4236-895a-6d3c5d7998f4
+langcode: en
+status: true
+dependencies: {  }
+id: store_
+label: 'Store Manager'
+weight: 3
+is_admin: null
+permissions:
+  - 'create reservation content'

@@ -1,0 +1,14 @@
+uuid: c1faa311-ca6c-4213-8ee5-9edcbca5df1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.store_agent
+  module:
+    - user
+id: user_remove_role_action.store_agent
+label: 'Remove the Store Agent role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: store_agent

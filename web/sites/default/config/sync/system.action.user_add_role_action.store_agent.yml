@@ -1,0 +1,14 @@
+uuid: c9c7af6c-d718-4365-8675-db0cd488fa36
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.store_agent
+  module:
+    - user
+id: user_add_role_action.store_agent
+label: 'Add the Store Agent role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: store_agent

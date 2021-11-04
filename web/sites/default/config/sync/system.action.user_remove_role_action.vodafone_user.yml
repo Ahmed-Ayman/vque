@@ -1,0 +1,14 @@
+uuid: f2447063-05ae-4353-8479-70e1ad145446
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vodafone_user
+  module:
+    - user
+id: user_remove_role_action.vodafone_user
+label: 'Remove the Vodafone user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vodafone_user

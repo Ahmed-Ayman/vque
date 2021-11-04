@@ -1,0 +1,29 @@
+uuid: b2ff3c94-26e6-4c2a-9d2f-f7727e87be65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reservation_store
+    - node.type.reservation
+    - node.type.store
+id: node.reservation.field_reservation_store
+field_name: field_reservation_store
+entity_type: node
+bundle: reservation
+label: 'Reservation Store'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      store: store
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -8,7 +8,6 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
-    - text
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -18,24 +17,17 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
-  contact:
-    weight: 5
-    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_mobile:
-    weight: 7
+    weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
-    region: content
-  language:
-    weight: 0
-    region: content
-  timezone:
-    weight: 6
+    type: string_textfield
     region: content
   user_picture:
     type: image_image
@@ -43,6 +35,9 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    weight: -1
+    weight: 2
     region: content
-hidden: {  }
+hidden:
+  contact: true
+  language: true
+  timezone: true

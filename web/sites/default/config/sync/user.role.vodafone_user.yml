@@ -1,0 +1,10 @@
+uuid: ca2dd59f-7c17-48e6-9ab2-df0277390354
+langcode: en
+status: true
+dependencies: {  }
+id: vodafone_user
+label: 'Vodafone user'
+weight: 5
+is_admin: null
+permissions:
+  - 'create reservation content'

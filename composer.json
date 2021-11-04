@@ -28,6 +28,7 @@
         "drupal/geofield_map": "^2.70",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/remove_username": "^1.1",
         "drupal/time_field": "^2.0",
         "drush/drush": "^10.6"
     },

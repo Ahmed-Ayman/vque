@@ -1,0 +1,10 @@
+uuid: 8c3af5bd-99c9-4081-96b5-776100deaba2
+langcode: en
+status: true
+dependencies: {  }
+id: store_agent
+label: 'Store Agent'
+weight: 4
+is_admin: null
+permissions:
+  - 'create reservation content'

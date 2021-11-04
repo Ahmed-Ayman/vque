@@ -1,0 +1,56 @@
+uuid: 2b53c622-cb2e-44c3-a57d-b2e237d4ed6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.reservation.field_phone_number
+    - field.field.node.reservation.field_reservation_problem
+    - field.field.node.reservation.field_reservation_queue_number
+    - field.field.node.reservation.field_reservation_status
+    - field.field.node.reservation.field_reservation_store
+    - field.field.node.reservation.field_reservation_user
+    - node.type.reservation
+  module:
+    - user
+id: node.reservation.teaser
+targetEntityType: node
+bundle: reservation
+mode: teaser
+content:
+  field_phone_number:
+    type: string
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_reservation_problem:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_reservation_queue_number:
+    type: string
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_reservation_store:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  field_reservation_status: true
+  field_reservation_user: true
+  links: true

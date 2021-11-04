@@ -1,21 +1,36 @@
-<div id="container">
-  <form class="" action="/stores" method="post">
-    <div class="js-form-item form-item js-form-type-textfield form-item-field-mobile-0-value js-form-item-field-mobile-0-value">
-      <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">mobile</label>
-      <input class="js-text-full text-full form-text form-element form-element--type-text form-element--api-textfield" name="mobile" required="required" value="{{ user_mobile }}" type="text" id="user_mobile" size="60" maxlength="255" placeholder="">
+{% if logged_in %}
 
-    </div>
-    <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
-      <label for="edit-name" class="form-item__label js-form-required form-required">problem</label>
-      <input type="text" class="form-text required form-element form-element--type-text form-element--api-textfield " required="required" name="problem" size="60" id="problem" value="" placeholder="problem">
-    </div>
-    <div class="row">
-      <a href="/home/check-suggestions" id="show-all-solutions"  class="use-ajax hidden"
-         data-dialog-type="modal"
-         data-dialog-options="{&quot;title&quot;:&quot;solutions&quot;,&quot;width&quot;:720,&quot;height&quot;:400}">show all solutions</a>
-    </div>
-    <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-      <input type="submit" class="button--primary button js-form-submit form-submit disabled" href="#" id="reservation" value="Reservation">
-    </div>
-  </form>
-</div>
+
+  <div id="container">
+    <form class="" action="/stores" method="post">
+      <div
+        class="js-form-item form-item js-form-type-textfield form-item-field-mobile-0-value js-form-item-field-mobile-0-value">
+        <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">mobile</label>
+        <input class="js-text-full text-full form-text form-element form-element--type-text form-element--api-textfield"
+               name="mobile" required="required" value="{{ user_mobile }}" type="text" id="user_mobile" size="60"
+               maxlength="255" placeholder="">
+
+      </div>
+      <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+        <label for="edit-name" class="form-item__label js-form-required form-required">problem</label>
+        <input type="text" class="form-text required form-element form-element--type-text form-element--api-textfield "
+               required="required" name="problem" size="60" id="problem" value="" placeholder="problem">
+      </div>
+      <div class="row">
+        <a href="/home/check-suggestions" id="show-all-solutions" class="use-ajax hidden"
+           data-dialog-type="modal"
+           data-dialog-options="{&quot;title&quot;:&quot;solutions&quot;,&quot;width&quot;:720,&quot;height&quot;:400}">show
+          all solutions</a>
+      </div>
+      <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+        <input type="submit" class="button--primary button js-form-submit form-submit disabled" href="#"
+               id="reservation" value="Reservation">
+      </div>
+    </form>
+  </div>
+{% else %}
+
+  <div id="container">
+    <a class="primary-button" href="/user/login?destination=/"> Please login first to reserve a store</a>
+  </div>
+{% endif %}

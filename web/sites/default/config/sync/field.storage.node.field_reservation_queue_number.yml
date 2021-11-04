@@ -1,12 +1,12 @@
-uuid: 893ff50b-3d4f-4a9d-8b43-49f309e351d5
+uuid: ad4f33b6-88b7-4469-a8ad-3ed847a2bc6f
 langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.field_mobile
-field_name: field_mobile
-entity_type: user
+    - node
+id: node.field_reservation_queue_number
+field_name: field_reservation_queue_number
+entity_type: node
 type: string
 settings:
   max_length: 100

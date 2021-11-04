@@ -1,0 +1,69 @@
+uuid: 93aac983-d98b-4faa-9c6f-7187d0a6cc72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.reservation.field_phone_number
+    - field.field.node.reservation.field_reservation_problem
+    - field.field.node.reservation.field_reservation_queue_number
+    - field.field.node.reservation.field_reservation_status
+    - field.field.node.reservation.field_reservation_store
+    - field.field.node.reservation.field_reservation_user
+    - node.type.reservation
+id: node.reservation.default
+targetEntityType: node
+bundle: reservation
+mode: default
+content:
+  field_phone_number:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_reservation_problem:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_reservation_store:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_reservation_queue_number: true
+  field_reservation_status: true
+  field_reservation_user: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

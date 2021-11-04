@@ -1,15 +1,15 @@
-uuid: 893ff50b-3d4f-4a9d-8b43-49f309e351d5
+uuid: e0f881dc-e335-4b77-b6ec-cd29bf24026f
 langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.field_mobile
-field_name: field_mobile
-entity_type: user
+    - node
+id: node.field_phone_number
+field_name: field_phone_number
+entity_type: node
 type: string
 settings:
-  max_length: 100
+  max_length: 50
   is_ascii: false
   case_sensitive: false
 module: core
