@@ -15,7 +15,7 @@ vf_reservation.check_suggestions:
 
 
 vf_reservation.suggestions_list:
-  path: '/home/check-suggestions/{problem}'
+  path: '/home/check-suggestions'
   defaults:
     _controller: '\Drupal\vf_reservation\Controller\ReservationController::suggestionsList'
   requirements:
