@@ -5,6 +5,7 @@ global-styling:
 global-scripts:
   js:
     js/scripts.js: {}
+    js/jquery-2.2.4.min.js: { minified: true, weight: -20 }
   dependencies:
-    - core/drupal
     - core/jquery
+    - core/jquery.once

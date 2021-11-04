@@ -1,0 +1,9 @@
+vf_reservation:
+  version: VERSION
+  js:
+    assets/js/reservation.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
