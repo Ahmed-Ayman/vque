@@ -1,0 +1,29 @@
+vf_reservation.home:
+  path: '/home'
+  defaults:
+    _controller: '\Drupal\vf_reservation\Controller\ReservationController::home'
+  requirements:
+    _permission: 'access content'
+
+
+vf_reservation.check_suggestions:
+  path: '/home/check-suggestions/{problem}/{mobile}'
+  defaults:
+    _controller: '\Drupal\vf_reservation\Controller\ReservationController::checkSuggestions'
+  requirements:
+    _permission: 'access content'
+
+
+vf_reservation.suggestions_list:
+  path: '/home/check-suggestions/{problem}'
+  defaults:
+    _controller: '\Drupal\vf_reservation\Controller\ReservationController::suggestionsList'
+  requirements:
+    _permission: 'access content'
+
+vf_reservation.stores:
+  path: '/stores'
+  defaults:
+    _controller: '\Drupal\vf_reservation\Controller\ReservationController::storesList'
+  requirements:
+    _permission: 'access content'
