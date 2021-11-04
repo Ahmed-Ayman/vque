@@ -1,4 +1,8 @@
 <?php
+
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
 /**
  * Implementing hook_theme().
  */
@@ -25,6 +29,7 @@ function vf_reservation_theme($existing, $type, $theme, $path)
     ],
   ];
 }
+
 /**
  * Implementing hook_page_attachments_alter().
  */
@@ -33,5 +38,21 @@ function vf_reservation_page_attachments_alter(&$page)
   $route_name = \Drupal::routeMatch()->getRouteName();
   if ($route_name === "vf_reservation.home") {
     $page['#attached']['library'][] = 'vf_reservation/vf_reservation';
+  }
+}
+
+function vf_reservation_preprocess_views_view_field(&$vars)
+{
+  if (isset($vars['view']) && ($vars['view']->id() == 'stores')) {
+    if ($vars['field']->field == 'nothing') {
+      $number = \Drupal::request()->request->get('mobile');
+//      dump(\Drupal::request()->request);
+      $problem = \Drupal::request()->request->get('problem');
+      if ($number && $problem){
+        $out = $vars['output']->__toString();
+        $out = str_replace('/reserve', "/reserve?mn=" . $number . "&" . "prob=" . $problem, $out);
+        $vars['output'] = (new \Drupal\Core\Render\Markup())->create($out);
+      }
+    }
   }
 }
