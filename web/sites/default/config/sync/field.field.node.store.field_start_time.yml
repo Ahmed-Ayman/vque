@@ -1,21 +1,21 @@
-uuid: c9a3463e-a3e5-4a49-ad0e-782218d97c06
+uuid: 7d3992fe-87f0-4e68-b705-09f459bac738
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_start_time
     - node.type.store
+  module:
+    - time_field
 id: node.store.field_start_time
 field_name: field_start_time
 entity_type: node
 bundle: store
-label: 'start time'
+label: 'Start Time'
 description: ''
 required: true
 translatable: false
-default_value:
-  -
-    value: 1635950777
+default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: timestamp
+field_type: time

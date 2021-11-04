@@ -1,0 +1,67 @@
+uuid: 50932eca-322b-4894-a9da-8ba3366e8787
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sotre_
+    - field.field.node.store.field_average_waiting_time
+    - field.field.node.store.field_currently_served_customer
+    - field.field.node.store.field_end_time
+    - field.field.node.store.field_local_market
+    - field.field.node.store.field_location
+    - field.field.node.store.field_number_of_people_in_queue
+    - field.field.node.store.field_region
+    - field.field.node.store.field_start_time
+    - field.field.node.store.field_store_image
+    - node.type.store
+  module:
+    - image
+    - user
+id: node.store.sotre_
+targetEntityType: node
+bundle: store
+mode: sotre_
+content:
+  field_average_waiting_time:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_currently_served_customer:
+    weight: 1
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_number_of_people_in_queue:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_store_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_end_time: true
+  field_local_market: true
+  field_location: true
+  field_region: true
+  field_start_time: true
+  links: true

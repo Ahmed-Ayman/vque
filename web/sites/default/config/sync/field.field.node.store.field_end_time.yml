@@ -1,21 +1,21 @@
-uuid: 0e0f2315-77a0-4289-88ea-dfdf399649fb
+uuid: 03a792db-b665-471e-a6ec-9d5fd6ccdbdb
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_end_time
     - node.type.store
+  module:
+    - time_field
 id: node.store.field_end_time
 field_name: field_end_time
 entity_type: node
 bundle: store
-label: 'end time'
+label: 'End Time'
 description: ''
 required: true
 translatable: false
-default_value:
-  -
-    value: 1635950824
+default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: timestamp
+field_type: time

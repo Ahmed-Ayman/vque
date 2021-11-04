@@ -1,17 +1,17 @@
-uuid: e2d66f42-7253-45f9-a4cd-2f2dc2fef76d
+uuid: ffeea174-8c02-4b6d-9057-0b06acf11327
 langcode: en
 status: true
 dependencies:
   module:
+    - geofield
     - node
-    - text
-id: node.field_latitude
-field_name: field_latitude
+id: node.field_location
+field_name: field_location
 entity_type: node
-type: text
+type: geofield
 settings:
-  max_length: 255
-module: text
+  backend: geofield_backend_default
+module: geofield
 locked: false
 cardinality: 1
 translatable: true

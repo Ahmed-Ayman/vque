@@ -1,0 +1,23 @@
+uuid: ef5390e3-cb5d-4533-8f05-93585a83e1dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_currently_served_customer
+    - node.type.store
+id: node.store.field_currently_served_customer
+field_name: field_currently_served_customer
+entity_type: node
+bundle: store
+label: 'Currently served customer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

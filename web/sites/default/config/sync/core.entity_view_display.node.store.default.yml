@@ -4,17 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.store.field_average_waiting_time
+    - field.field.node.store.field_currently_served_customer
     - field.field.node.store.field_end_time
-    - field.field.node.store.field_latitude
     - field.field.node.store.field_local_market
-    - field.field.node.store.field_longitude
+    - field.field.node.store.field_location
+    - field.field.node.store.field_number_of_people_in_queue
     - field.field.node.store.field_region
     - field.field.node.store.field_start_time
     - field.field.node.store.field_store_image
     - node.type.store
   module:
+    - geofield_map
     - image
-    - text
+    - time_field
     - user
 id: node.store.default
 targetEntityType: node
@@ -30,22 +32,22 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  field_end_time:
-    weight: 104
+  field_currently_served_customer:
+    weight: 112
     label: above
     settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    type: timestamp
+    type: number_integer
     region: content
-  field_latitude:
-    weight: 102
+  field_end_time:
+    weight: 111
     label: above
-    settings: {  }
+    settings:
+      time_format: 'h:i a'
     third_party_settings: {  }
-    type: text_default
+    type: time_formatter
     region: content
   field_local_market:
     weight: 105
@@ -55,12 +57,93 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_longitude:
-    weight: 101
+  field_location:
+    weight: 109
     label: above
-    settings: {  }
+    settings:
+      gmap_api_key: ''
+      map_dimensions:
+        width: 100%
+        height: 450px
+      map_empty:
+        empty_behaviour: '0'
+        empty_message: 'No Geofield Value entered for this field'
+      map_center:
+        lat: '42'
+        lon: '12.5'
+        center_force: 0
+      map_zoom_and_pan:
+        zoom:
+          initial: 6
+          force: 0
+          min: 1
+          max: 22
+          finer: 0
+        scrollwheel: 1
+        draggable: 1
+        map_reset: 0
+        map_reset_position: TOP_RIGHT
+      map_controls:
+        disable_default_ui: 0
+        zoom_control: 1
+        map_type_id: roadmap
+        map_type_control: 1
+        map_type_control_options_type_ids:
+          roadmap: roadmap
+          satellite: satellite
+          hybrid: hybrid
+          terrain: terrain
+        scale_control: 1
+        street_view_control: 1
+        fullscreen_control: 1
+      map_marker_and_infowindow:
+        icon_image_mode: icon_file
+        icon_image_path: ''
+        icon_file_wrapper:
+          icon_file: ''
+        infowindow_field: title
+        view_mode: full
+        multivalue_split: 0
+        force_open: 0
+        tooltip_field: title
+      map_oms:
+        map_oms_control: 1
+        map_oms_options: '{"markersWontMove": "true", "markersWontHide": "true", "basicFormatEvents": "true", "nearbyDistance": 3}'
+      map_additional_options: ''
+      map_additional_libraries: {  }
+      map_geometries_options: '{"strokeColor":"black","strokeOpacity":"0.8","strokeWeight":2,"fillColor":"blue","fillOpacity":"0.1", "clickable": false}'
+      custom_style_map:
+        custom_style_control: 0
+        custom_style_name: ''
+        custom_style_options: ''
+        custom_style_default: 0
+      map_markercluster:
+        markercluster_control: 0
+        markercluster_additional_options: '{"maxZoom":12, "gridSize":50}'
+      map_geocoder:
+        control: 0
+        settings:
+          position: topright
+          input_size: 25
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          infowindow: 0
+          options: ''
+      map_lazy_load:
+        lazy_load: 0
     third_party_settings: {  }
-    type: text_default
+    type: geofield_google_map
+    region: content
+  field_number_of_people_in_queue:
+    weight: 113
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_region:
     weight: 106
@@ -71,14 +154,12 @@ content:
     type: entity_reference_label
     region: content
   field_start_time:
-    weight: 103
+    weight: 110
     label: above
     settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
+      time_format: 'h:i a'
     third_party_settings: {  }
-    type: timestamp
+    type: time_formatter
     region: content
   field_store_image:
     weight: 108
@@ -91,7 +172,7 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

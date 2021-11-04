@@ -1,0 +1,20 @@
+uuid: 3076f82c-7430-4070-8c41-baf340fdbb20
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_number_of_people_in_queue
+field_name: field_number_of_people_in_queue
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

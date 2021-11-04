@@ -1,0 +1,23 @@
+uuid: 8b8c9317-5014-49fb-a9e5-8397365561c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_people_in_queue
+    - node.type.store
+id: node.store.field_number_of_people_in_queue
+field_name: field_number_of_people_in_queue
+entity_type: node
+bundle: store
+label: 'Number of people in Queue'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,17 +1,17 @@
-uuid: d196e5b0-f064-4942-8e59-8525ef326708
+uuid: 04c78f4c-84fe-4bd7-a8f7-158a55801516
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
-id: node.field_longitude
-field_name: field_longitude
+id: node.field_currently_served_customer
+field_name: field_currently_served_customer
 entity_type: node
-type: text
+type: integer
 settings:
-  max_length: 255
-module: text
+  unsigned: false
+  size: normal
+module: core
 locked: false
 cardinality: 1
 translatable: true

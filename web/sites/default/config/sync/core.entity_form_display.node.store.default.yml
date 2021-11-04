@@ -4,19 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.store.field_average_waiting_time
+    - field.field.node.store.field_currently_served_customer
     - field.field.node.store.field_end_time
-    - field.field.node.store.field_latitude
     - field.field.node.store.field_local_market
-    - field.field.node.store.field_longitude
+    - field.field.node.store.field_location
+    - field.field.node.store.field_number_of_people_in_queue
     - field.field.node.store.field_region
     - field.field.node.store.field_start_time
     - field.field.node.store.field_store_image
     - image.style.thumbnail
     - node.type.store
   module:
+    - geofield_map
     - image
     - path
-    - text
+    - time_field
 id: node.store.default
 targetEntityType: node
 bundle: store
@@ -35,19 +37,20 @@ content:
     third_party_settings: {  }
     type: number
     region: content
-  field_end_time:
-    weight: 124
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_timestamp
-    region: content
-  field_latitude:
-    weight: 122
+  field_currently_served_customer:
+    weight: 132
     settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: number
+    region: content
+  field_end_time:
+    weight: 131
+    settings:
+      enabled: false
+      step: 5
+    third_party_settings: {  }
+    type: time_widget
     region: content
   field_local_market:
     weight: 125
@@ -55,13 +58,53 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_longitude:
-    weight: 121
+  field_location:
+    weight: 129
     settings:
-      size: 60
+      html5_geolocation: false
+      default_value:
+        lat: !!float 0
+        lon: !!float 0
+      map_library: leaflet
+      map_google_api_key: ''
+      map_google_places:
+        places_control: false
+        places_additional_options: ''
+      map_geocoder:
+        control: 0
+        settings:
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          options: ''
+      map_dimensions:
+        width: 100%
+        height: 450px
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
+      zoom_level: 5
+      zoom:
+        start: 6
+        focus: 12
+        min: 0
+        max: 22
+      click_to_find_marker: false
+      click_to_place_marker: false
+      hide_coordinates: false
+      geoaddress_field:
+        field: '0'
+        hidden: false
+        disabled: true
+    third_party_settings: {  }
+    type: geofield_map
+    region: content
+  field_number_of_people_in_queue:
+    weight: 133
+    settings:
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: number
     region: content
   field_region:
     weight: 126
@@ -70,10 +113,12 @@ content:
     type: options_select
     region: content
   field_start_time:
-    weight: 123
-    settings: {  }
+    weight: 130
+    settings:
+      enabled: false
+      step: 5
     third_party_settings: {  }
-    type: datetime_timestamp
+    type: time_widget
     region: content
   field_store_image:
     weight: 128

@@ -1,0 +1,10 @@
+uuid: fbca5fc0-56b7-4aa3-8461-ce4a270767dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sotre_
+label: 'Map teaser'
+targetEntityType: node
+cache: true
