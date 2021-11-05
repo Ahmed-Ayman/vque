@@ -3,13 +3,21 @@
 
   <div id="container">
     <form class="" action="/stores" method="post">
-      <div
-        class="js-form-item form-item js-form-type-textfield form-item-field-mobile-0-value js-form-item-field-mobile-0-value">
-        <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">mobile</label>
+      <div class="js-form-item form-item js-form-type-textfield form-item-field-mobile-0-value js-form-item-field-mobile-0-value">
+        <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">Mobile</label>
         <input class="js-text-full text-full form-text form-element form-element--type-text form-element--api-textfield"
                name="mobile" required="required" value="{{ user_mobile }}" type="text" id="user_mobile" size="60"
                maxlength="255" placeholder="">
 
+      </div>
+      <div class="js-form-item form-item form-select ">
+        <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">Cateory</label>
+        <select name="category" class="form-element--type-select form-select" required="required" id="category">
+          <option value=""> Select Category </option>
+          {% for category in categories %}
+            <option value="{{ category.tid }}"> {{ category.name }} </option>
+          {% endfor %}
+        </select>
       </div>
       <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
         <label for="edit-name" class="form-item__label js-form-required form-required">problem</label>

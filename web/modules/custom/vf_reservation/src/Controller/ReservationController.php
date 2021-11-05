@@ -18,9 +18,11 @@ class ReservationController extends ControllerBase
 
   public function home()
   {
+    $categories = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('categories');
     return [
       '#theme' => 'reservation',
       '#user_mobile' => $this->userInfo->field_mobile->value,
+      '#categories' => $categories,
 
     ];
   }
@@ -59,6 +61,8 @@ class ReservationController extends ControllerBase
   public function storesList(Request $request){
     $mobile = $request->get('mobile');
     $problem = $request->get('problem');
+    $category = $request->get('category');
+    dd($category);
     $data =[
       [
         'title'=>'mo',
