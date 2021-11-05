@@ -4,9 +4,7 @@ namespace Drupal\vf_reservation\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
-use Drupal\views\Views;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class ReservationController extends ControllerBase
@@ -20,9 +18,11 @@ class ReservationController extends ControllerBase
 
   public function home()
   {
+    $categories = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('categories');
     return [
       '#theme' => 'reservation',
       '#user_mobile' => $this->userInfo->field_mobile->value,
+      '#categories' => $categories,
 
     ];
   }
@@ -41,9 +41,15 @@ class ReservationController extends ControllerBase
     $nodes = Node::loadMultiple($result);
     $data = [];
     foreach ($nodes as $node){
+    $tid = $node->get('field_category')->target_id;
+    if($tid){
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+    }
+
       $data[]=[
         'nid' => $node->id(),
         'title' => $node->get('title')->value,
+        'category' => $term?$term->getName():'',
       ];
     }
     return [
@@ -55,7 +61,8 @@ class ReservationController extends ControllerBase
   public function storesList(Request $request){
     $mobile = $request->get('mobile');
     $problem = $request->get('problem');
-
+    $category = $request->get('category');
+    dd($category);
     $data =[
       [
         'title'=>'mo',
@@ -83,5 +90,15 @@ class ReservationController extends ControllerBase
         ->condition('body', "%$word%", 'like');
     $query->condition($group);
     return $query->execute();
+  }
+
+  public function waitingTime($number_on_queue, $average_time) {
+    return $number_on_queue * $average_time .'mint';
+  }
+
+  public function cancelReservations($store_id, $current_number) {
+    $query = \Drupal::entityQuery('node');
+    $query->condition('type', "reservation");
+    $query->condition('field_store', $store_id);
   }
 }

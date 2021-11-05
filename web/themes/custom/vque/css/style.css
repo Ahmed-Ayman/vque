@@ -286,3 +286,18 @@ textarea[id^='edit-field-external-links'] {
   top: 30px;
   position: relative;
 }
+
+#problem {
+  height: 100px;
+}
+.ui-dialog {
+  z-index: 115 !important;
+}
+
+#suggestion-table {
+  width: inherit;
+  text-align: center;
+}
+#suggestion-table thead tr th {
+  text-align: center;
+}

@@ -27,3 +27,4 @@ vf_reservation.stores:
     _controller: '\Drupal\vf_reservation\Controller\ReservationController::storesList'
   requirements:
     _permission: 'access content'
+
