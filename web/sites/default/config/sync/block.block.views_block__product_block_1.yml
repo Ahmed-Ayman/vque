@@ -1,0 +1,33 @@
+uuid: 17272b47-535e-49ab-9a53-ad16acdee508
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.product
+  module:
+    - ctools
+    - views
+  theme:
+    - vque
+id: views_block__product_block_1
+theme: vque
+region: content_below
+weight: 0
+provider: null
+plugin: 'views_block:product-block_1'
+settings:
+  id: 'views_block:product-block_1'
+  label: 'Special offer'
+  provider: views
+  label_display: visible
+  views_label: 'Special offer'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      problems: problems
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,29 @@
+uuid: edbe2fe7-82a9-406f-827e-70786fa906e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_problem
+    - node.type.problems
+    - node.type.produat
+id: node.produat.field_related_problem
+field_name: field_related_problem
+entity_type: node
+bundle: produat
+label: 'related problem'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      problems: problems
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

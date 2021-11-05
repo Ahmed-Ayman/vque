@@ -301,3 +301,7 @@ textarea[id^='edit-field-external-links'] {
 #suggestion-table thead tr th {
   text-align: center;
 }
+
+#page-wrapper {
+  max-width:100%;
+}
