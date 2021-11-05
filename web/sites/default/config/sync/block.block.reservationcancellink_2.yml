@@ -1,0 +1,33 @@
+uuid: 13fb14fb-7e56-44a4-990a-aa431f650fd0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:reservations_cancel_block_type:91f21426-b7d4-4698-8ae0-30f554318f48'
+  module:
+    - block_content
+    - node
+  theme:
+    - olivero
+id: reservationcancellink_2
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:91f21426-b7d4-4698-8ae0-30f554318f48'
+settings:
+  id: 'block_content:91f21426-b7d4-4698-8ae0-30f554318f48'
+  label: 'Reservation Cancel Link'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      reservation: reservation
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

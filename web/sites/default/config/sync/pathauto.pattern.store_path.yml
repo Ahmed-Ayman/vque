@@ -1,0 +1,22 @@
+uuid: 71ae4f7e-cfca-4094-9677-844b98c68dcf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: store_path
+label: 'Store path'
+type: 'canonical_entities:node'
+pattern: 'store/[node:nid]'
+selection_criteria:
+  3dc68a0e-e22f-4241-9cf0-9fe302903d9e:
+    id: node_type
+    bundles:
+      store: store
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3dc68a0e-e22f-4241-9cf0-9fe302903d9e
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,8 @@
+uuid: 6e4fdd90-1fee-4447-ba4c-ea5a8e5d30d4
+langcode: en
+status: true
+dependencies: {  }
+id: reservations_cancel_block_type
+label: 'Reservation Cancel Link'
+revision: null
+description: 'Cancel Reservation Link'

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.reservation.field_phone_number
     - field.field.node.reservation.field_reservation_problem
     - field.field.node.reservation.field_reservation_queue_number
+    - field.field.node.reservation.field_reservation_screen
     - field.field.node.reservation.field_reservation_status
     - field.field.node.reservation.field_reservation_store
     - field.field.node.reservation.field_reservation_user
@@ -41,6 +42,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_reservation_screen:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_reservation_status:
     type: list_default

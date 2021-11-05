@@ -1,0 +1,22 @@
+uuid: a43ad838-3f73-43f7-addc-c465029cf613
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: reservation_path
+label: 'Reservation Path'
+type: 'canonical_entities:node'
+pattern: 'reservation/[node:nid]'
+selection_criteria:
+  103d4022-00c6-4800-92a5-bbb23228867e:
+    id: node_type
+    bundles:
+      reservation: reservation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 103d4022-00c6-4800-92a5-bbb23228867e
+selection_logic: and
+weight: -5
+relationships: {  }

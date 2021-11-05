@@ -1,0 +1,22 @@
+uuid: 1f2fcad7-e9b0-41ab-bce9-57e9221acf80
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: screen_path
+label: 'Screen path'
+type: 'canonical_entities:node'
+pattern: 'screen/[node:nid]'
+selection_criteria:
+  670170b8-0bed-4a76-a570-255846e1d89c:
+    id: node_type
+    bundles:
+      screen: screen
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 670170b8-0bed-4a76-a570-255846e1d89c
+selection_logic: and
+weight: -5
+relationships: {  }

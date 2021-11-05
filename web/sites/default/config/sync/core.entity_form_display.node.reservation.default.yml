@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.reservation.field_phone_number
     - field.field.node.reservation.field_reservation_problem
     - field.field.node.reservation.field_reservation_queue_number
+    - field.field.node.reservation.field_reservation_screen
     - field.field.node.reservation.field_reservation_status
     - field.field.node.reservation.field_reservation_store
     - field.field.node.reservation.field_reservation_user
@@ -25,6 +26,16 @@ content:
     region: content
   field_reservation_problem:
     weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_reservation_screen:
+    weight: 26
     settings:
       match_operator: CONTAINS
       match_limit: 10

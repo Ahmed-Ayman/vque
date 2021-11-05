@@ -1,0 +1,34 @@
+uuid: f6ce7ca3-41f5-435f-8019-f84a7bbd8756
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.screen.field_counter
+    - field.field.node.screen.field_store
+    - node.type.screen
+  module:
+    - user
+id: node.screen.teaser
+targetEntityType: node
+bundle: screen
+mode: teaser
+content:
+  field_counter:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_store:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  links: true
