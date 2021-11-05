@@ -1,4 +1,4 @@
-uuid: 76995894-5cb3-4b9a-a5a5-adb1fdbcb513
+uuid: e186d066-9bff-4718-9c59-0fddd59b66d4
 langcode: en
 status: true
 dependencies:
@@ -10,14 +10,14 @@ dependencies:
     - views
   theme:
     - vque
-id: views_block__reservations_block_3
+id: views_block__reservations_block_4_2
 theme: vque
 region: content
-weight: -5
+weight: -7
 provider: null
-plugin: 'views_block:reservations-block_3'
+plugin: 'views_block:reservations-block_4'
 settings:
-  id: 'views_block:reservations-block_3'
+  id: 'views_block:reservations-block_4'
   label: ''
   provider: views
   label_display: visible
@@ -25,14 +25,14 @@ settings:
   items_per_page: none
   context_mapping: {  }
 visibility:
-  user_role:
-    id: user_role
-    roles:
-      vodafone_user: vodafone_user
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
   request_path:
     id: request_path
     pages: '/user/*'
     negate: false
+  user_role:
+    id: user_role
+    roles:
+      store_agent: store_agent
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

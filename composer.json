@@ -24,6 +24,7 @@
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
         "drupal/devel": "^4.1",
+        "drupal/field_permissions": "^1.1",
         "drupal/geofield": "^1.34",
         "drupal/geofield_map": "^2.70",
         "drupal/gin": "^3.0@alpha",

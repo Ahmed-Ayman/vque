@@ -26,6 +26,9 @@ settings:
     -
       value: 'visit the store again'
       label: 'visit the store again'
+    -
+      value: 'being served'
+      label: 'being served'
   allowed_values_function: ''
 module: options
 locked: false
