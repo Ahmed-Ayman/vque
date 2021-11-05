@@ -1375,7 +1375,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      title: 'My Reservations'
+      title: 'Pending Reservations'
       defaults:
         title: false
         arguments: false
@@ -1744,7 +1744,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Operations links'
+          label: Actions
           exclude: false
           alter:
             alter_text: false
