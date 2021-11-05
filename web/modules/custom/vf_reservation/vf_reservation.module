@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Url;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
@@ -118,11 +119,81 @@ function vf_reservation_entity_presave(\Drupal\Core\Entity\EntityInterface $enti
   if ($entity->bundle() == 'reservation') {
     $entity->field_reservation_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
     $entity->field_reservation_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-    $entity->field_reservation_status = "waiting in the queue";
+    $currentReservation = $entity->field_reservation_status->value;
+    if (!isset($currentReservation)) {
+      $entity->field_reservation_status = "waiting in the queue";
+    }
 
-    $store = \Drupal\node\Entity\Node::load($entity->field_reservation_store->getString());
-    $peopleInQueue = intval($store->get('field_number_of_people_in_queue')->getString());
-    $currentQueue = intval($store->get('field_currently_served_customer')->getString());
-    $entity->field_reservation_queue_number = $peopleInQueue + $currentQueue;
+    // set the reservation id
+
+    if (!isset($entity->field_reservation_queue_number->value)) {
+      // check if the store has a reservation number
+      $store = \Drupal\node\Entity\Node::load($entity->field_reservation_store->getString());
+      $currentInQueue = intval($store->get('field_currently_served_customer')->getString());
+      if ($currentInQueue || $currentInQueue == 0) {
+        // get from reservations
+
+        $connection = \Drupal::database();
+
+        $biggestReservationValue = intval($connection->query("SELECT MAX(nd.field_reservation_queue_number_value) AS mxValue
+            FROM `node_revision__field_reservation_queue_number` AS nd
+            JOIN node_field_data fd ON fd.nid = nd.entity_id
+            JOIN node_revision__field_reservation_store st on st.entity_id = nd.entity_id
+            WHERE DATE(FROM_UNIXTIME(fd.created)) = CURRENT_DATE
+            AND st.field_reservation_store_target_id =" . $store->id())->fetchAll()[0]->mxValue);
+        $entity->field_reservation_queue_number = $biggestReservationValue + 1;
+
+        $peopleInQueue = intval($store->get('field_number_of_people_in_queue')->getString());
+        $store->set('field_number_of_people_in_queue', $peopleInQueue + 1);
+      } else {
+        $entity->field_reservation_queue_number = 1;
+        $store->set('field_number_of_people_in_queue', 1);
+      }
+      $store->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function vf_reservation_entity_operation_alter(array &$operations, \Drupal\Core\Entity\EntityInterface $entity)
+{
+  $entityTypeId = $entity->getEntityTypeId();
+  if ($entityTypeId !== 'node') {
+    return;
+  }
+  $nodeType = $entity->getType();
+  $nodeId = $entity->id();
+  if ($nodeType === 'reservation') {
+
+    $currentReservation = $entity->field_reservation_status->value;
+    if ($currentReservation == 'waiting in the queue') {
+      if (in_array('store_agent', \Drupal::currentUser()->getRoles())) {
+        $assignUrl = Url::fromRoute('vf_reservation.assign_to_me',
+          ['rid' => $nodeId,
+            'uid' => \Drupal::currentUser()->id()]
+        );
+        $operations['assign_to_me'] = array(
+          'title' => t('Assign to me'),
+          'weight' => 20,
+          'url' => $assignUrl,
+        );
+      }
+    }
+    if ($currentReservation == 'being served') {
+      if (in_array('store_agent', \Drupal::currentUser()->getRoles())) {
+        $resolveUrl = Url::fromRoute('vf_reservation.resolve',
+          ['rid' => $nodeId]
+        );
+        $operations['problem_solved'] = array(
+          'title' => t('Resolve'),
+          'weight' => 20,
+          'url' => $resolveUrl,
+        );
+      }
+
+    }
+
   }
 }

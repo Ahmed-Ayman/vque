@@ -28,3 +28,19 @@ vf_reservation.stores:
   requirements:
     _permission: 'access content'
 
+
+vf_reservation.assign_to_me:
+  path: '/assign/{rid}/{uid}'
+  defaults:
+    _controller: '\Drupal\vf_reservation\Controller\AssignReservationController::assignReservationToUser'
+    _title: 'assignReservationToUser'
+  requirements:
+    _permission: 'access content'
+
+vf_reservation.resolve:
+  path: '/resolve/{rid}'
+  defaults:
+    _controller: '\Drupal\vf_reservation\Controller\AssignReservationController::resolve'
+    _title: 'Resolve'
+  requirements:
+    _permission: 'access content'
