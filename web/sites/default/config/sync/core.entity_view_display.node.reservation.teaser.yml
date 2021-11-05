@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.reservation.field_phone_number
     - field.field.node.reservation.field_reservation_problem
     - field.field.node.reservation.field_reservation_queue_number
+    - field.field.node.reservation.field_reservation_screen
     - field.field.node.reservation.field_reservation_status
     - field.field.node.reservation.field_reservation_store
     - field.field.node.reservation.field_reservation_user
@@ -51,6 +52,7 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
+  field_reservation_screen: true
   field_reservation_status: true
   field_reservation_user: true
   links: true

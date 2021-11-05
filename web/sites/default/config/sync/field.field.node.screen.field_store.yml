@@ -1,0 +1,29 @@
+uuid: 5ae23189-47d3-4f75-a839-845b92e1aaa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store
+    - node.type.screen
+    - node.type.store
+id: node.screen.field_store
+field_name: field_store
+entity_type: node
+bundle: screen
+label: Store
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      store: store
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

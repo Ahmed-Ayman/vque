@@ -1,0 +1,26 @@
+uuid: 50552662-d952-4ac3-964f-0d0240d32054
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.screen.field_counter
+    - field.field.node.screen.field_store
+    - node.type.screen
+  module:
+    - user
+id: node.screen.default
+targetEntityType: node
+bundle: screen
+mode: default
+content:
+  field_counter:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_store: true
+  links: true

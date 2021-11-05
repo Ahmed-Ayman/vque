@@ -1,0 +1,22 @@
+uuid: 14771d63-ebab-4a12-843f-fb2c0d9487b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: problem_path
+label: 'Problem Path'
+type: 'canonical_entities:node'
+pattern: 'problem/[node:nid]'
+selection_criteria:
+  513ab10c-8ad8-44fd-b35a-af8e81d28d0f:
+    id: node_type
+    bundles:
+      problems: problems
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 513ab10c-8ad8-44fd-b35a-af8e81d28d0f
+selection_logic: and
+weight: -5
+relationships: {  }
