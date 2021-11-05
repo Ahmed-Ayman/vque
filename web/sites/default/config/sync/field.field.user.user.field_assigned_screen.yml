@@ -1,0 +1,30 @@
+uuid: b0f34300-2e4c-4abb-857c-4c3a0217ea74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_assigned_screen
+    - node.type.screen
+  module:
+    - user
+id: user.user.field_assigned_screen
+field_name: field_assigned_screen
+entity_type: user
+bundle: user
+label: 'Assigned Screen'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      screen: screen
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: screen
+field_type: entity_reference

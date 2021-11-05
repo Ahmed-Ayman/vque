@@ -1,0 +1,6 @@
+multiple_registration_redirect_path_vodafone_user: /user/login
+multiple_registration_hidden_vodafone_user: 0
+multiple_registration_form_mode_register_vodafone_user: vodafon
+multiple_registration_form_mode_edit_vodafone_user: vodafon
+multiple_registration_path_vodafone_user: /user/registration
+multiple_registration_url_vodafone_user: /user/register/vodafone_user

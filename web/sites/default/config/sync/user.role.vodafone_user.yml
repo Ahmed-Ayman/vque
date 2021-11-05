@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: vodafone_user
-label: 'Vodafone user'
+label: 'Vque user'
 weight: 5
 is_admin: null
 permissions:

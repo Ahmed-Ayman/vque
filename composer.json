@@ -28,9 +28,11 @@
         "drupal/geofield_map": "^2.70",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/multiple_registration": "^3.0",
         "drupal/pathauto": "^1.8",
         "drupal/remove_username": "^1.1",
         "drupal/time_field": "^2.0",
+        "drupal/user_field_value": "^1.1",
         "drush/drush": "^10.6"
     },
     "conflict": {

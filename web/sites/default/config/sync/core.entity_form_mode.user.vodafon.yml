@@ -1,0 +1,10 @@
+uuid: 1661e4a3-4f0b-4ff2-bd46-818ca252ba22
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.vodafon
+label: 'Vodafone user'
+targetEntityType: user
+cache: true

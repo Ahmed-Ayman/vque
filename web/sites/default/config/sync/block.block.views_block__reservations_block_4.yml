@@ -1,0 +1,39 @@
+uuid: 6d38c979-3d90-4afa-a9f3-d94f969c334a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.reservations
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - vque
+id: views_block__reservations_block_4
+theme: vque
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:reservations-block_4'
+settings:
+  id: 'views_block:reservations-block_4'
+  label: 'Pending Reservations'
+  provider: views
+  label_display: '0'
+  views_label: 'Pending Reservations'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+  user_role:
+    id: user_role
+    roles:
+      store_: store_
+      store_agent: store_agent
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

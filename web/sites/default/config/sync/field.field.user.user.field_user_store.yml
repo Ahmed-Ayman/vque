@@ -1,0 +1,30 @@
+uuid: 294d549b-4904-45f5-bb3c-178f6a22ee88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_store
+    - node.type.store
+  module:
+    - user
+id: user.user.field_user_store
+field_name: field_user_store
+entity_type: user
+bundle: user
+label: 'User Store'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      store: store
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

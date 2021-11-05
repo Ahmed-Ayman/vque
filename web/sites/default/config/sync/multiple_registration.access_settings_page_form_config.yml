@@ -1,0 +1,7 @@
+multiple_registration_pages_white_list:
+  vodafone_user: vodafone_user
+  anonymous: 0
+  authenticated: 0
+  administrator: 0
+  store_: 0
+  store_agent: 0
