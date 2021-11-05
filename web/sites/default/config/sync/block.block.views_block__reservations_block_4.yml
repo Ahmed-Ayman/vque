@@ -18,10 +18,10 @@ provider: null
 plugin: 'views_block:reservations-block_4'
 settings:
   id: 'views_block:reservations-block_4'
-  label: 'Pending Reservations'
+  label: ''
   provider: views
-  label_display: '0'
-  views_label: 'Pending Reservations'
+  label_display: visible
+  views_label: ''
   items_per_page: none
   context_mapping: {  }
 visibility:
