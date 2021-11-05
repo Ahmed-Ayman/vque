@@ -1,9 +1,12 @@
 <main class="container">
-  <table class="views-table cols-3">
+  <table class="views-table cols-3" id="suggestion-table">
     <thead>
     <tr>
       <th class="views-align-center views-field views-field-title views-align-center" id="view-title-table-column"
           scope="col">Question
+      </th>
+      <th class="views-align-center views-field views-field-title views-align-center" id="view-title-table-column"
+          scope="col">Category
       </th>
     </tr>
     </thead>
@@ -13,7 +16,7 @@
       <td headers="view-title-table-column" class="views-field views-field-title views-align-center">
         <a target="_blank" href="/node/{{ suggtion.nid }}" hreflang="en">{{ suggtion.title}} </a>
       </td>
-{#            <td headers="view-body-table-column" class=""><p>{{ suggtion.answer}}</p></td>#}
+      <td headers="view-body-table-column" class=""><p>{{ suggtion.category}}</p></td>
     </tr>
     {% endfor %}
     </tbody>
