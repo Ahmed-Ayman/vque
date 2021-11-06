@@ -5,7 +5,14 @@ dependencies:
   config:
     - node.type.local_market
   module:
+    - field_layout
+    - layout_discovery
     - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.local_market.default
 targetEntityType: node
 bundle: local_market

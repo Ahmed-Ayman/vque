@@ -9,7 +9,7 @@ id: node.screen.field_counter
 field_name: field_counter
 entity_type: node
 bundle: screen
-label: Counter
+label: 'client number'
 description: ''
 required: false
 translatable: false

@@ -8,8 +8,15 @@ dependencies:
     - field.field.node.problems.field_publish_for_end_users
     - node.type.problems
   module:
+    - field_layout
+    - layout_discovery
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.problems.default
 targetEntityType: node
 bundle: problems

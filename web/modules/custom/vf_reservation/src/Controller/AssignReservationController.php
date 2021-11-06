@@ -28,6 +28,8 @@ class AssignReservationController extends ControllerBase
     // update reservation status and screen
     $reservation->set('field_reservation_screen', $userScreen);
     $reservation->set('field_reservation_status', "being served");
+    $reservation->set('field_estimated_waittime', Null);
+
     $reservation->save();
     // currently served customer
     $storeNode = Node::load($userAgent->get('field_user_store')->getString());

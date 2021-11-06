@@ -1,0 +1,23 @@
+uuid: 5086e892-5b74-4667-bc9e-9734962e1305
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estimated_waittime
+    - node.type.reservation
+id: node.reservation.field_estimated_waittime
+field_name: field_estimated_waittime
+entity_type: node
+bundle: reservation
+label: 'Estimated Wait Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

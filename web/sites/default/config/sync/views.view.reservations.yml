@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.storage.node.field_reservation_problem
+    - field.storage.node.field_reservation_queue_number
     - field.storage.node.field_reservation_screen
     - field.storage.node.field_reservation_status
     - field.storage.node.field_reservation_store
@@ -451,17 +452,17 @@ display:
           id: created
           table: node_field_data
           field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
           relationship: none
           group_type: group
           admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
           granularity: second
+          entity_type: node
+          entity_field: created
+          plugin_id: date
       title: Reservations
       header: {  }
       footer: {  }
@@ -1407,6 +1408,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        sorts: false
       arguments:
         field_reservation_store_target_id:
           id: field_reservation_store_target_id
@@ -1479,14 +1481,14 @@ display:
           not: false
           plugin_id: numeric
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_reservation_queue_number:
+          id: field_reservation_queue_number
+          table: node__field_reservation_queue_number
+          field: field_reservation_queue_number
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Reservation ID'
+          label: 'Reservation Queue Number'
           exclude: false
           alter:
             alter_text: false
@@ -1505,7 +1507,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 20
+            max_length: 0
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -1514,7 +1516,7 @@ display:
             strip_tags: false
             trim: false
             preserve_tags: ''
-            html: true
+            html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -1530,7 +1532,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1541,8 +1543,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
           plugin_id: field
         field_reservation_problem:
           id: field_reservation_problem
@@ -1921,6 +1921,19 @@ display:
         operator: AND
         groups:
           1: AND
+      sorts:
+        field_reservation_queue_number_value:
+          id: field_reservation_queue_number_value
+          table: node__field_reservation_queue_number
+          field: field_reservation_queue_number_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -1933,6 +1946,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_reservation_problem'
+        - 'config:field.storage.node.field_reservation_queue_number'
         - 'config:field.storage.node.field_reservation_screen'
         - 'config:field.storage.node.field_reservation_status'
   page_1:
@@ -1959,10 +1973,10 @@ display:
         arguments: false
         access: false
       arguments:
-        field_reservation_user_target_id:
-          id: field_reservation_user_target_id
-          table: node__field_reservation_user
-          field: field_reservation_user_target_id
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
           relationship: none
           group_type: group
           admin_label: ''
@@ -1992,6 +2006,8 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+          entity_type: node
+          entity_field: uid
           plugin_id: numeric
       access:
         type: role
@@ -2020,7 +2036,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      title: 'Pending Reservations in the store'
+      title: 'Pending in the queue'
       defaults:
         title: false
         arguments: false
@@ -2065,14 +2081,14 @@ display:
           not: false
           plugin_id: numeric
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_reservation_queue_number:
+          id: field_reservation_queue_number
+          table: node__field_reservation_queue_number
+          field: field_reservation_queue_number
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Reservation ID'
+          label: 'Reservation Queue Number'
           exclude: false
           alter:
             alter_text: false
@@ -2091,7 +2107,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 20
+            max_length: 0
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -2100,7 +2116,7 @@ display:
             strip_tags: false
             trim: false
             preserve_tags: ''
-            html: true
+            html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -2116,7 +2132,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2127,8 +2143,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
           plugin_id: field
         field_reservation_problem:
           id: field_reservation_problem
@@ -2577,5 +2591,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_reservation_problem'
+        - 'config:field.storage.node.field_reservation_queue_number'
         - 'config:field.storage.node.field_reservation_screen'
         - 'config:field.storage.node.field_reservation_status'

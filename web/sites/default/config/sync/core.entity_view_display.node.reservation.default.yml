@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.reservation.field_estimated_waittime
     - field.field.node.reservation.field_phone_number
     - field.field.node.reservation.field_reservation_problem
     - field.field.node.reservation.field_reservation_queue_number
@@ -19,6 +20,15 @@ targetEntityType: node
 bundle: reservation
 mode: default
 content:
+  field_estimated_waittime:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_phone_number:
     weight: 0
     label: above
@@ -31,7 +41,7 @@ content:
     weight: 4
     label: above
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -44,7 +54,7 @@ content:
     type: string
     region: content
   field_reservation_screen:
-    weight: 6
+    weight: 7
     label: above
     settings:
       link: true

@@ -6,12 +6,20 @@ dependencies:
     - field.field.node.produat.body
     - field.field.node.produat.field_image
     - field.field.node.produat.field_related_problem
+    - field.field.node.produat.layout_builder__layout
     - image.style.thumbnail
     - node.type.produat
   module:
+    - field_layout
     - image
+    - layout_discovery
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.produat.default
 targetEntityType: node
 bundle: produat
@@ -92,4 +100,5 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

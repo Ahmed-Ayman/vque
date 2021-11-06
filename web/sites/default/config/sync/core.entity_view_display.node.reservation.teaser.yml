@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.reservation.field_estimated_waittime
     - field.field.node.reservation.field_phone_number
     - field.field.node.reservation.field_reservation_problem
     - field.field.node.reservation.field_reservation_queue_number
@@ -52,6 +53,7 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
+  field_estimated_waittime: true
   field_reservation_screen: true
   field_reservation_status: true
   field_reservation_user: true

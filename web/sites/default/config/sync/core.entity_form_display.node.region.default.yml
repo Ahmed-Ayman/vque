@@ -6,7 +6,14 @@ dependencies:
     - field.field.node.region.field_local_market
     - node.type.region
   module:
+    - field_layout
+    - layout_discovery
     - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.region.default
 targetEntityType: node
 bundle: region

@@ -10,7 +10,7 @@ id: node.produat.field_related_problem
 field_name: field_related_problem
 entity_type: node
 bundle: produat
-label: 'related problem'
+label: 'Related Problems'
 description: ''
 required: false
 translatable: false

@@ -142,9 +142,9 @@ function vf_reservation_entity_presave(\Drupal\Core\Entity\EntityInterface $enti
             WHERE DATE(FROM_UNIXTIME(fd.created)) = CURRENT_DATE
             AND st.field_reservation_store_target_id =" . $store->id())->fetchAll()[0]->mxValue);
         $entity->field_reservation_queue_number = $biggestReservationValue + 1;
-
         $peopleInQueue = intval($store->get('field_number_of_people_in_queue')->getString());
         $store->set('field_number_of_people_in_queue', $peopleInQueue + 1);
+        $entity->field_estimated_waittime = $peopleInQueue * intval($store->get('field_average_waiting_time')->getString());
       } else {
         $entity->field_reservation_queue_number = 1;
         $store->set('field_number_of_people_in_queue', 1);

@@ -1,4 +1,4 @@
-uuid: f3f6686d-7045-4490-ba39-43f7bfa32244
+uuid: 65a7d81b-d50e-4fdf-aafb-de87aebb42e2
 langcode: en
 status: true
 dependencies:
@@ -8,15 +8,16 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_related_problem
-field_name: field_related_problem
+id: node.field_estimated_waittime
+field_name: field_estimated_waittime
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: node
+  unsigned: false
+  size: normal
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

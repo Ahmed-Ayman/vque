@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.reservation.field_estimated_waittime
     - field.field.node.reservation.field_phone_number
     - field.field.node.reservation.field_reservation_problem
     - field.field.node.reservation.field_reservation_queue_number
@@ -11,6 +12,14 @@ dependencies:
     - field.field.node.reservation.field_reservation_store
     - field.field.node.reservation.field_reservation_user
     - node.type.reservation
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.reservation.default
 targetEntityType: node
 bundle: reservation
@@ -61,6 +70,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_estimated_waittime: true
   field_reservation_queue_number: true
   field_reservation_screen: true
   field_reservation_status: true
