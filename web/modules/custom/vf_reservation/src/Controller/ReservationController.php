@@ -62,43 +62,19 @@ class ReservationController extends ControllerBase
     $mobile = $request->get('mobile');
     $problem = $request->get('problem');
     $category = $request->get('category');
-    dd($category);
-    $data =[
-      [
-        'title'=>'mo',
-        'id'=>1
-      ],[
-        'title'=>'mo',
-        'id'=>1
-      ],[
-        'title'=>'mo',
-        'id'=>1
-      ]
-    ];
-    return [
-      '#theme' => 'stores',
-      '#user_mobile' => $data,
-
-    ];
   }
 
   public function searchOnSuggestions($word){
+    $arr_words = explode(' ', trim($word));
     $query = \Drupal::entityQuery('node');
     $query->condition('type', "problems");
-    $group = $query->orConditionGroup()
-        ->condition('title', "%$word%", 'like')
-        ->condition('body', "%$word%", 'like');
+    $group = $query->orConditionGroup();
+    foreach ($arr_words as $arr_word){
+      $group->condition('title', "%$arr_word%", 'like');
+      $group->condition('body', "%$arr_word%", 'like');
+    }
     $query->condition($group);
     return $query->execute();
   }
 
-  public function waitingTime($number_on_queue, $average_time) {
-    return $number_on_queue * $average_time .'mint';
-  }
-
-  public function cancelReservations($store_id, $current_number) {
-    $query = \Drupal::entityQuery('node');
-    $query->condition('type', "reservation");
-    $query->condition('field_store', $store_id);
-  }
 }
