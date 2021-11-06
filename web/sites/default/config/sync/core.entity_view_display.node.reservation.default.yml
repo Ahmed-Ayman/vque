@@ -13,8 +13,167 @@ dependencies:
     - field.field.node.reservation.field_reservation_user
     - node.type.reservation
   module:
+    - layout_builder
+    - layout_discovery
     - options
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          d4f14b01-b39c-4c80-9291-01d9ff8c51aa:
+            uuid: d4f14b01-b39c-4c80-9291-01d9ff8c51aa
+            region: content
+            configuration:
+              id: 'field_block:node:reservation:field_reservation_store'
+              label: 'Reservation Store'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 50-50
+          context_mapping: {  }
+        components:
+          a2b5aff1-6602-45d7-ab7c-744fb86a845e:
+            uuid: a2b5aff1-6602-45d7-ab7c-744fb86a845e
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_reservation_queue_number'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 1
+          d3487598-e9b1-4a2b-bc10-5806d9179bfe:
+            uuid: d3487598-e9b1-4a2b-bc10-5806d9179bfe
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_reservation_screen'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 2
+          60d7430f-e0ed-4b2a-9620-617967987142:
+            uuid: 60d7430f-e0ed-4b2a-9620-617967987142
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_reservation_problem'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 2
+          986ef9aa-e959-4793-96d4-c5019b7f3e17:
+            uuid: 986ef9aa-e959-4793-96d4-c5019b7f3e17
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_reservation_status'
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          e7169f1a-edb4-472b-9ff4-4ab0b0c2eec4:
+            uuid: e7169f1a-edb4-472b-9ff4-4ab0b0c2eec4
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_estimated_waittime'
+              formatter:
+                label: above
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 0
+          f108a425-f8f0-4e10-91bf-2c7f3dd991b4:
+            uuid: f108a425-f8f0-4e10-91bf-2c7f3dd991b4
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_phone_number'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 3
+          5840f7c0-998a-4ece-b98f-25a84fc615cd:
+            uuid: 5840f7c0-998a-4ece-b98f-25a84fc615cd
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:reservation:field_reservation_user'
+              formatter:
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 4
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
 id: node.reservation.default
 targetEntityType: node
 bundle: reservation

@@ -85,7 +85,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Name
+          label: Screen
           exclude: false
           alter:
             alter_text: false
@@ -150,7 +150,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Counter
+          label: 'Client #'
           exclude: false
           alter:
             alter_text: false
@@ -302,10 +302,11 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: Screens
     position: 1
     display_options:
       display_extenders: {  }
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:

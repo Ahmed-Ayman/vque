@@ -10,7 +10,7 @@ id: node.reservation.field_reservation_store
 field_name: field_reservation_store
 entity_type: node
 bundle: reservation
-label: 'Reservation Store'
+label: Store
 description: ''
 required: true
 translatable: false

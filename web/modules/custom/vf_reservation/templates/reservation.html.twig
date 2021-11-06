@@ -1,9 +1,10 @@
 {% if logged_in %}
 
-
   <div id="container" class="home_page">
-    <form class="" action="/stores" method="post">
-      <div class="js-form-item form-item js-form-type-textfield form-item-field-mobile-0-value js-form-item-field-mobile-0-value">
+    <h2>Create a reservation</h2>
+    <form class="home-form" action="/stores" method="post">
+      <div
+        class="js-form-item form-item js-form-type-textfield form-item-field-mobile-0-value js-form-item-field-mobile-0-value">
         <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">Mobile</label>
         <input class="js-text-full text-full form-text form-element form-element--type-text form-element--api-textfield"
                name="mobile" required="required" value="{{ user_mobile }}" type="text" id="user_mobile" size="60"
@@ -13,32 +14,37 @@
       <div class="js-form-item form-item form-select ">
         <label for="edit-field-mobile-0-value" class="form-item__label js-form-required form-required">Cateory</label>
         <select name="category" class="form-element--type-select form-select" required="required" id="category">
-          <option value=""> Select Category </option>
+          <option value=""> Select Category</option>
           {% for category in categories %}
             <option value="{{ category.tid }}"> {{ category.name }} </option>
           {% endfor %}
         </select>
       </div>
       <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
-        <label for="edit-name" class="form-item__label js-form-required form-required">problem</label>
+        <label for="edit-name" class="form-item__label js-form-required form-required">Reason of visit</label>
         <input type="text" class="form-text required form-element form-element--type-text form-element--api-textfield "
                required="required" name="problem" size="60" id="problem" value="" placeholder="problem">
       </div>
       <div class="row">
         <a href="/home/check-suggestions" id="show-all-solutions" class="use-ajax hidden"
            data-dialog-type="modal"
-           data-dialog-options="{&quot;title&quot;:&quot;solutions&quot;,&quot;width&quot;:720,&quot;height&quot;:400}">show
-          all solutions</a>
+           data-dialog-options="{&quot;title&quot;:&quot;Suggested Solutions&quot;,&quot;width&quot;:720,&quot;height&quot;:400}">
+          👉 Similar questions (get rewards!) 😉
+        </a>
       </div>
       <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
         <input type="submit" class="button--primary button js-form-submit form-submit disabled" href="#"
-               id="reservation" value="Reservation">
+               id="reservation" value="Select a store">
       </div>
     </form>
   </div>
 {% else %}
 
-  <div id="container">
-    <a class="primary-button" href="/user/login?destination=/"> Please login first to reserve a store</a>
+  <div id="container ano_container">
+    <h2 class=" welcome">Welcome To Vque</h2>
+    <h3>Now it's easier to solve your problems </h3>
+    <h3>and book a store appointment easily!</h3>
+    <a class="button--primary button js-form-submit form-submit disabled" href="/user/login?destination=/">Get Started
+      >></a>
   </div>
 {% endif %}

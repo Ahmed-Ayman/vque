@@ -9,7 +9,7 @@ id: node.reservation.field_reservation_queue_number
 field_name: field_reservation_queue_number
 entity_type: node
 bundle: reservation
-label: 'Reservation Queue Number'
+label: 'Reservation Number'
 description: ''
 required: false
 translatable: false

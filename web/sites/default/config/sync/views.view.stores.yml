@@ -831,7 +831,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Average Waiting Time'
+          label: 'Average customer serving time '
           exclude: false
           alter:
             alter_text: false

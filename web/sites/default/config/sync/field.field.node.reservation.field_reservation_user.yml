@@ -9,7 +9,7 @@ id: node.reservation.field_reservation_user
 field_name: field_reservation_user
 entity_type: node
 bundle: reservation
-label: 'Reservation User'
+label: 'Client email'
 description: ''
 required: false
 translatable: false

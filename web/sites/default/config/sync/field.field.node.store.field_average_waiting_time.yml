@@ -9,7 +9,7 @@ id: node.store.field_average_waiting_time
 field_name: field_average_waiting_time
 entity_type: node
 bundle: store
-label: 'Average Waiting Time'
+label: 'Avg customer serving time'
 description: 'Average Waiting Time per customer'
 required: true
 translatable: false
