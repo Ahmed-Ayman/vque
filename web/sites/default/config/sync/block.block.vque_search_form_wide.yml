@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - search
+    - system
   theme:
     - vque
 _core:
@@ -20,4 +21,8 @@ settings:
   provider: search
   label_display: '0'
   page_id: ''
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/screen/*'
+    negate: true
