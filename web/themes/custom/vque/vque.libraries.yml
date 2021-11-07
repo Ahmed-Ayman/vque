@@ -6,6 +6,9 @@ global-scripts:
   js:
     js/scripts.js: {}
     js/jquery-2.2.4.min.js: { minified: true, weight: -20 }
+    //ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js: {}
+    //ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js: {}
+    js/sevenSeg.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
